@@ -1,0 +1,91 @@
+{% extends 'basic.html' %}
+
+{% block head %} 
+<title>House Price Prediction</title>
+{% endblock %}
+
+{% block body %} 
+<h1 style="color:red; text-align: center">House Price Prediction</h1>
+<marquee style="color:red">
+  <h3>developed by Mudassir Shaik</h3>
+</marquee>
+<form action '/' method = 'POST'>
+  <div style="text-align: center">
+    <div class="col-auto my-1">
+      <label style="text-align: center" class="col-sm-2 my-1" for="post">Property Posted By</label>
+      <select class="col-sm-1 my-2" name="post">
+          <option value="0">Owner</option>
+          <option value="1">Dealer</option>
+          <option value="2">Builder</option>
+      </select>
+    </div> 
+    <div class="form-group">
+      <label style="text-align: center" class="col-sm-2 my-1" for='const'>Under Construction:</label>
+      <input class="form-check-input" type="radio" name="const" id="const_no" value="0"> No </input>
+      <input class="form-check-input" type="radio" name="const" id="const_yes" value="1"> Yes </input>
+    </div> 
+    <div class="form-group">
+      <label style="text-align: center" class="col-sm-2 my-1" for='approve'>Regulatory Authority:</label>
+      <input class="form-check-input" type="radio" name="approve" id="approve_no" value="0"> No </input>
+      <input class="form-check-input" type="radio" name="approve" id="approve_yes" value="1"> Yes </input>
+    </div>
+    <div class="form-group">
+      <label style="text-align: center" class="col-sm-2 my-1" for='type'>Type of House:</label>
+      <input class="form-check-input" type="radio" name="type" id="type_bhk" value="0"> BHK </input>
+      <input class="form-check-input" type="radio" name="type" id="type_rk" value="1"> RK </input>
+    </div>
+    <div class="col-auto my-1">
+      <label style="text-align: center" class="col-sm-2 my-1" for="bhk">Number of Bedrooms</label>
+      <select class="col-sm-1 my-2" name="bhk">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+      </select>
+    </div> 
+    <div class="form-group">
+      <label style="text-align: center" class="col-sm-2 my-1" for="area">Area:</label>
+      <input type="text" class="col-sm-1 my-2" name="area" placeholder="Enter Area in SQFT">
+    </div>
+    <div class="form-group">
+      <label style="text-align: center" class="col-sm-2 my-1" for='rtm'>Ready to move:</label>
+      <input class="form-check-input" type="radio" name="rtm" id="rtm_no" value="0"> No </input>
+      <input class="form-check-input" type="radio" name="rtm" id="rtm_yes" value="1"> Yes </input>
+    </div>
+    <div class="form-group">
+      <label style="text-align: center" class="col-sm-2 my-1" for='resale'>Resale:</label>
+      <input class="form-check-input" type="radio" name="resale" id="resale_no" value="0"> No </input>
+      <input class="form-check-input" type="radio" name="resale" id="resale_yes" value="1"> Yes </input>
+    </div>
+    <div class="form-group">
+      <label style="text-align: center" class="col-sm-2 my-1" for="long">Longitude:</label>
+      <input type="text" class="col-sm-1 my-2" name="long" placeholder="Enter Longitude">
+    </div>
+    <div class="form-group">
+      <label style="text-align: center" class="col-sm-2 my-1" for="lati">Latitude:</label>
+      <input type="text" class="col-sm-1 my-2" name="lati" placeholder="Enter Latitude">
+    </div>
+    <button type='submit' value='submit'>&emsp;&emsp;Calculate&emsp;&emsp;</button><br><br>
+  </div>
+  <hr>
+</form>
+{% if eo%}
+<p>Predicted House Price is {{ eo }} Lakhs</p>
+{% endif %}
+{% endblock %}
